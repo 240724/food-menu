@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
@@ -13,16 +13,9 @@ const Search = () => {
   const [respons, setRespons] = useState([]);
   const [err, setErr] = useState("");
 
-  let url = "";
-  // useEffect(() => {
   //     url = `https://api.edamam.com/search?q=${food}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`
-  //   try {
   //       fetch(url).then(res => res.json).then(data => setRespons(data)).catch(error => console.log(error))
-  //   } catch (error) {
-  //       console.log(error);
-  //   }
 
-  // }, [isOk])
   const getData = async (food, mealType) => {
     const APP_KEY = "4a5b108c509ed4e48cd68f262407ac73";
     const APP_ID = "82eb25da";
@@ -31,19 +24,22 @@ const Search = () => {
       const { data } = await axios(url);
       setRespons(data.hits);
       setIsOk(true);
+      setErr("");
     } catch (error) {
       setErr(error);
     }
   };
-  // getData();
-  // useEffect(() => {
-  //   getData(food, mealType);
-  // }, [isOk]);
 
   const searchFood = () => {
-    // console.log(food, mealType);
-    // console.log("calisti");
-    getData(food, mealType);
+    if (food && mealType) {
+      getData(food, mealType);
+    } else if (food && !mealType) {
+      setErr("please select meal type");
+    } else if (!food && mealType) {
+      setErr("please enter food name");
+    } else if (!food && !mealType) {
+      setErr("please enter food name and select meal type");
+    }
   };
 
   return (
@@ -72,7 +68,7 @@ const Search = () => {
             style={{ height: "40px" }}
             onChange={(e) => setMealType(e.target.value)}
           >
-            <option>Open this select menu</option>
+            {/* <option>Open this select menu</option> */}
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
             <option value="dinner">Dinner</option>
@@ -80,18 +76,33 @@ const Search = () => {
             <option value="teatime">Tea Time</option>
           </Form.Select>
         </Form>
-        <p>{err}</p>
+        <p
+          style={{
+            color: "red",
+            fontSize: "1.5rem",
+            background: "black",
+            padding: "0 1rem",
+          }}
+        >
+          {err}
+        </p>
       </div>
       {isOk && (
         <div className="cards">
           <Row className="g-3">
-            {respons.map((item) => {
-              return (
-                <Col key={item.recipe.totalWeight}>
-                  <FoodCards data={item.recipe} summary />
-                </Col>
-              );
-            })}
+            {respons.length === 0 ? (
+              <span style={{ color: "red" }}>
+                The name of the food you entered could not be found
+              </span>
+            ) : (
+              respons.map((item) => {
+                return (
+                  <Col key={item.recipe.totalWeight}>
+                    <FoodCards data={item.recipe} summary />
+                  </Col>
+                );
+              })
+            )}
           </Row>
         </div>
       )}

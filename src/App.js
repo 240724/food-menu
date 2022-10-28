@@ -12,12 +12,21 @@ function App() {
   const [user, setUser] = useState(false);
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const [reviewedFoods, setReviewedFoods] = useState([]);
   return (
     <div className="App">
       <Header />
 
       <Routes>
-        <Route path="/search/:id" element={<FoodDetail />} />
+        <Route
+          path="/search/:id"
+          element={
+            <FoodDetail
+              setReviewedFoods={setReviewedFoods}
+              reviewedFoods={reviewedFoods}
+            />
+          }
+        />
         <Route index path="/" element={<Search />} />
         <Route path="/about" element={<About />} />
         <Route path="/logout" element={<Navigate to={"/login"} />} />
@@ -27,7 +36,7 @@ function App() {
             element={
               <UserInformation
                 userName={userName}
-                userPassword={userPassword}
+                reviewedFoods={reviewedFoods}
               />
             }
           />

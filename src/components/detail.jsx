@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./detail.css";
-const Detail = ({ data, id }) => {
-  console.log(data);
-  console.log(id);
+const Detail = ({ data, setReviewedFoods, reviewedFoods }) => {
   const {
     image,
     calories,
@@ -15,6 +13,10 @@ const Detail = ({ data, id }) => {
     source,
     totalWeight,
   } = data;
+  useEffect(() => {
+    setReviewedFoods([...reviewedFoods, label]);
+  }, [label]);
+
   const navigate = useNavigate();
   return (
     <div className="detail-info">

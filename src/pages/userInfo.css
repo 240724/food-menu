@@ -1,9 +1,12 @@
 .user-info {
   padding: 1rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url("../assets/erzincan-ergan-kkayak-merkezi.jpg");
   background-size: cover;
   /* background-position: center; */
   background-repeat: no-repeat;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
 }
