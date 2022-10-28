@@ -1,3 +1,77 @@
+# Project : Food Menu
+
+## Description and use of the site
+
+In this project, data extraction was performed using axios with the API key obtained from the Edemam.com site.
+You can Login any Username and any Password. You can search Pizza, chicken, meal.
+In the user menu, you can find the user's name and information about the products she/he has visited.
+The site can be searched without a user login, but if the user menu is clicked when the user is not logged in, the site redirects the user to the Login page.
+## Check The Live Website ➡️ [Live Website](https://food-menu24.netlify.app/)
+
+## Visualization of the Website
+
+![Form](./food-menu.gif)
+
+
+
+
+## Learning Outcomes
+
+At the end of the project, you will be able to;
+
+- improve coding skills within HTML & CSS & JS & ReactJS & Axios & React-Router.
+
+- use git commands (push, pull, commit, add etc.) and Github as Version Control System.
+
+## Problem Statement
+
+- We are adding a new project to our portfolios. So you and your colleagues have started to work on the project.
+
+## Project Skeleton
+
+```
+Project(folder)
+|
+|----README.md
+├── public
+│     └── index.html
+├── src
+│    ├── components
+│    │       ├── Detail.jsx
+│    │       ├── FoodCard.jsx.jsx
+│    ├── assests
+│    │       ├── Wallpapers.jpg
+│    ├── App.js
+│    ├── index.js
+│    ├── index.css
+│    ├── Login.jsx
+│    ├── Logout.jsx
+│    ├── PrivateRouter.jsx
+│    ├── Search.jsx
+│    ├── FoodDetail.jsx
+└── package.json
+```
+
+### Overview
+
+I mastered HTML & CSS & JS & ReactJS features in this project.
+You can see the visual representation of the website above.
+
+## Notes
+
+- Step 1: Create React App using `npx create-react-app project-name`
+
+- Step 2: Push your application into your own public repo on Github
+
+- Step 3: Add project gif to your project and README.md file.
+
+## Resources
+
+- 🔥 You can use [`Edemam-API`](https://edemam.com/) for your own work.
+
+## Support
+Open an Issue, I will check it a soon as possible 👀
+Don't forget to start the repo ⭐
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
