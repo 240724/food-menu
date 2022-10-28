@@ -1,0 +1,27 @@
+.search {
+  background-image: url("../assets/kemah.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.search-box {
+  border: 2px solid rgb(172, 107, 22);
+  width: 550px;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.search-div {
+  padding-top: 90px;
+  margin: 0 30%;
+}
+.food {
+  text-align: center;
+  color: rgb(172, 107, 22);
+}
+
+.cards {
+  background-color: bisque;
+  padding: 1rem;
+}

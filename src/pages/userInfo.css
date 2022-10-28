@@ -1,0 +1,9 @@
+.user-info {
+  padding: 1rem;
+
+  background-image: url("../assets/erzincan-ergan-kkayak-merkezi.jpg");
+  background-size: cover;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}

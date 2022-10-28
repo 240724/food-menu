@@ -1,0 +1,29 @@
+.login {
+  padding: 1rem;
+  min-height: 100vh;
+  background-image: url("../assets/Erzincanmerkezi.jpg");
+  background-repeat: no-repeat;
+}
+input,
+button {
+  height: 2rem;
+  width: 15rem;
+}
+button {
+  background-color: rgba(34, 7, 185, 0.96);
+  border: 2px solid rgb(230, 230, 17);
+  border-radius: 15px;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.7;
+}
+button:active {
+  transform: scale(0.97);
+}
+img {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+}

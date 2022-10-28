@@ -1,0 +1,8 @@
+.about {
+  padding: 1rem;
+  min-height: 100vh;
+  background-image: url("../assets/maxresdefault\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
