@@ -4,17 +4,24 @@
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  min-width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+.search-div {
+  padding-top: 90px;
 }
 .search-box {
+  padding-top: 1rem;
   border: 2px solid rgb(172, 107, 22);
   width: 550px;
   display: flex;
   gap: 1rem;
   justify-content: space-between;
-}
-.search-div {
-  padding-top: 90px;
-  margin: 0 30%;
 }
 .food {
   text-align: center;
@@ -22,6 +29,6 @@
 }
 
 .cards {
-  background-color: bisque;
+  background-color: rgba(255, 228, 196, 0.3);
   padding: 1rem;
 }

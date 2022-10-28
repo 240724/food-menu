@@ -1,6 +1,10 @@
 .login {
   padding: 1rem;
   min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url("../assets/Erzincanmerkezi.jpg");
   background-repeat: no-repeat;
 }

@@ -11,6 +11,7 @@ const Search = () => {
   const [mealType, setMealType] = useState("");
   const [isOk, setIsOk] = useState(false);
   const [respons, setRespons] = useState([]);
+  const [err, setErr] = useState("");
 
   let url = "";
   // useEffect(() => {
@@ -26,8 +27,13 @@ const Search = () => {
     const APP_KEY = "4a5b108c509ed4e48cd68f262407ac73";
     const APP_ID = "82eb25da";
     const url = `https://api.edamam.com/search?q=${food}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
-    const { data } = await axios(url);
-    setRespons(data.hits);
+    try {
+      const { data } = await axios(url);
+      setRespons(data.hits);
+      setIsOk(true);
+    } catch (error) {
+      setErr(error);
+    }
   };
   // getData();
   // useEffect(() => {
@@ -35,7 +41,6 @@ const Search = () => {
   // }, [isOk]);
 
   const searchFood = () => {
-    setIsOk(true);
     // console.log(food, mealType);
     // console.log("calisti");
     getData(food, mealType);
@@ -75,6 +80,7 @@ const Search = () => {
             <option value="teatime">Tea Time</option>
           </Form.Select>
         </Form>
+        <p>{err}</p>
       </div>
       {isOk && (
         <div className="cards">

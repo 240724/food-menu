@@ -2,7 +2,6 @@ import React from "react";
 import { useLocation, useParams } from "react-router-dom";
 import Detail from "../components/detail";
 import FoodCards from "../components/foodCards";
-import "./fooddetail.css";
 
 const FoodDetail = () => {
   const { state: data } = useLocation();

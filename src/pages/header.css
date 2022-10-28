@@ -2,10 +2,11 @@
   position: fixed;
   padding: 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   background-color: rgba(25, 227, 25, 0.482);
   width: 100vw;
-  min-height: 80px;
+  /* min-height: 80px; */
 }
 #links {
   display: flex;
